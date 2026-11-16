@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="robots" content="noindex">
-  <title>Matemática — Equações do 1º grau</title>
+  <title>Ciências — Propriedades da água</title>
   <style>
     :root {
       color-scheme: light;
@@ -90,7 +89,12 @@
     .answer-form { display: flex; gap: 10px; align-items: end; }
     .answer-field { flex: 1; }
     .answer-field label { display: block; font-size: 13px; font-weight: 650; margin-bottom: 8px; }
-    .answer-field input { width: 100%; border: 1px solid #b9c5d3; border-radius: 8px; padding: 11px 12px; min-height: 44px; color: var(--ink); }
+    .answer-field input, .answer-field select { width: 100%; border: 1px solid #b9c5d3; border-radius: 8px; padding: 11px 12px; min-height: 44px; color: var(--ink); background: white; }
+    .exercise-question { margin: 0 0 14px; font-size: 15px; line-height: 1.55; }
+    .fraction { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; line-height: 1.05; font-size: .78em; margin: 0 .12em; }
+    .fraction span:first-child { border-bottom: 1px solid currentColor; padding: 0 .18em .08em; }
+    .fraction span:last-child { padding: .08em .18em 0; }
+    .review-equation { min-height: 76px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4px; background: var(--blue-soft); border-radius: 10px; padding: 18px; margin-bottom: 14px; font: 600 clamp(21px, 3vw, 30px) Georgia, serif; line-height: 1.4; }
     .exercise-items { display: grid; gap: 14px; }
     .exercise-item { border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
     .exercise-item h3 { margin: 0 0 12px; font-size: 15px; }
@@ -111,8 +115,6 @@
     .solution-item:last-child { border-bottom: 0; }
     .solution-item h4 { margin: 0 0 7px; font-size: 15px; }
     .solution-item p { color: #526277; font-size: 14px; line-height: 1.6; margin: 0; }
-    .records-box { margin-top: 26px; border-top: 1px solid var(--line); padding-top: 17px; }
-    .records-box p { color: var(--muted); font-size: 13px; line-height: 1.5; }
     .feedback { min-height: 46px; margin-top: 14px; font-size: 14px; line-height: 1.5; }
     .feedback.good { color: var(--green); }
     .feedback.try-again { color: #a25718; }
@@ -172,24 +174,24 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="brand"><span class="brand-mark" aria-hidden="true">∑</span>Matemática</div>
+    <div class="brand"><span class="brand-mark" aria-hidden="true">H₂O</span>Ciências</div>
     <div class="topbar-divider" aria-hidden="true"></div>
-    <div class="topbar-label">Equações do 1º grau</div>
+    <div class="topbar-label">Propriedades da água</div>
   </header>
 
   <div class="layout">
     <aside aria-label="Navegação da aula">
-      <div class="course-label">Matemática</div>
-      <h2 class="course-title">Equações do 1º grau</h2>
+      <div class="course-label">Ciências</div>
+      <h2 class="course-title">Propriedades da água</h2>
       <nav class="outer-nav" aria-label="Seções">
         <button class="outer-tab" type="button" data-section="today" aria-selected="true"><span class="nav-icon" aria-hidden="true">✓</span>Tarefas de Hoje</button>
         <button class="outer-tab" type="button" data-section="extra" aria-selected="false"><span class="nav-icon" aria-hidden="true">＋</span>Problemas complementares</button>
       </nav>
       <div class="lesson-progress" id="lessonProgress">
         <div class="progress-heading">Etapas de hoje</div>
-        <div class="progress-step active" data-progress="explanation"><span class="step-number">1</span><span>Entender o conceito<br>e ver um exemplo</span></div>
-        <div class="progress-step" data-progress="exercises"><span class="step-number">2</span><span>Praticar com<br>exercícios</span></div>
-        <div class="progress-step" data-progress="review"><span class="step-number">3</span><span>Revisar o que<br>aprendemos</span></div>
+        <div class="progress-step active" data-progress="explanation"><span class="step-number">1</span><span>Conhecer as<br>propriedades da água</span></div>
+        <div class="progress-step" data-progress="exercises"><span class="step-number">2</span><span>Responder às<br>questões</span></div>
+        <div class="progress-step" data-progress="review"><span class="step-number">3</span><span>Resolver a<br>revisão</span></div>
       </div>
     </aside>
 
@@ -208,41 +210,24 @@
         <section class="lesson-view" id="explanationView">
           <div class="explanation-grid">
             <article class="lesson-copy">
-              <h2>Equações do 1º grau</h2>
-              <p class="lead">É uma igualdade com uma incógnita (x) elevada à primeira potência. Resolver a equação é descobrir qual valor de x mantém os dois lados iguais.</p>
-              <h3>Vamos isolar o x</h3>
-              <p class="section-intro">Veja como resolver a equação abaixo, passo a passo.</p>
-              <div class="equation">2x + 5 = 13</div>
-              <div class="worked-step">
-                <span class="step-badge">1</span>
-                <div><strong>Subtraia 5 dos dois lados.</strong><p>Assim, retiramos o +5 sem alterar a igualdade.</p><div class="math-line">2x + 5 <em>− 5</em> = 13 <em>− 5</em><br>2x = 8</div></div>
-              </div>
-              <div class="worked-step">
-                <span class="step-badge">2</span>
-                <div><strong>Divida os dois lados por 2.</strong><p>Como x está multiplicado por 2, desfazemos essa multiplicação.</p><div class="math-line">2x ÷ 2 = 8 ÷ 2</div><div class="answer-line">x = 4</div></div>
-              </div>
-              <h3>Exemplo médio</h3>
-              <p class="section-intro">Resolva 3x − 4 = 11 somando 4 aos dois lados e depois dividindo por 3.</p>
-              <div class="equation">3x − 4 = 11</div>
-              <div class="worked-step"><span class="step-badge">1</span><div><strong>Some 4 aos dois lados.</strong><p>Isso desfaz a subtração de 4.</p><div class="math-line">3x − 4 + 4 = 11 + 4<br>3x = 15</div></div></div>
-              <div class="worked-step"><span class="step-badge">2</span><div><strong>Divida os dois lados por 3.</strong><p>Assim, x fica sozinho.</p><div class="math-line">3x ÷ 3 = 15 ÷ 3</div><div class="answer-line">x = 5</div></div></div>
-              <div class="success-note">Conferência: 3 × 5 − 4 = 15 − 4 = 11. A igualdade está correta.</div>
-              <h3>Quando o x aparece nos dois lados</h3>
-              <p class="section-intro">Agrupe os termos com x de um lado e os números do outro.</p>
-              <div class="equation">2(x + 3) = 3x − 4</div>
-              <div class="worked-step"><span class="step-badge">1</span><div><strong>Distribua o 2.</strong><p>Multiplique o número de fora pelos termos dentro dos parênteses.</p><div class="math-line">2x + 6 = 3x − 4</div></div></div>
-              <div class="worked-step"><span class="step-badge">2</span><div><strong>Deixe os termos com x de um lado.</strong><p>Subtraia 2x dos dois lados e some 4 aos dois lados.</p><div class="math-line">6 = x − 4<br>10 = x</div><div class="answer-line">x = 10</div></div></div>
-              <h3>Quando há frações</h3>
-              <p class="section-intro">Multiplique todos os termos pelo mínimo múltiplo comum dos denominadores para eliminar as frações.</p>
-              <div class="equation" style="font-size:24px">(2x − 1) ÷ 3 − (x + 2) ÷ 4 = (x + 1) ÷ 6</div>
-              <div class="worked-step"><span class="step-badge">1</span><div><strong>Multiplique tudo por 12.</strong><p>O mínimo múltiplo comum de 3, 4 e 6 é 12. Depois, distribua e junte os termos semelhantes.</p><div class="math-line">4(2x − 1) − 3(x + 2) = 2(x + 1)<br>8x − 4 − 3x − 6 = 2x + 2<br>5x − 10 = 2x + 2</div></div></div>
-              <div class="worked-step"><span class="step-badge">2</span><div><strong>Isole o x.</strong><p>Subtraia 2x, some 10 e divida por 3 nos dois lados.</p><div class="math-line">3x − 10 = 2<br>3x = 12</div><div class="answer-line">x = 4</div></div></div>
-              <div class="success-note">Conferência: 7/3 − 6/4 = 5/6, e (4 + 1) ÷ 6 = 5/6. Os dois lados são iguais.</div>
+              <h2>Propriedades da água</h2>
+              <p class="lead">A água apresenta propriedades que influenciam o ambiente e os seres vivos. Elas estão relacionadas, em grande parte, à atração entre suas moléculas.</p>
+              <h3>Densidade</h3>
+              <p class="section-intro">Densidade é a quantidade de massa em certo volume. A água líquida atinge sua densidade máxima por volta de 4 °C. Ao congelar, suas moléculas formam uma estrutura mais espaçada, tornando o gelo menos denso; por isso, ele flutua. Em lagos, o gelo na superfície ajuda a isolar a água abaixo.</p>
+              <h3>Calor específico</h3>
+              <p class="section-intro">Calor específico é a quantidade de energia necessária para aquecer uma substância. A água tem calor específico alto, então aquece e esfria lentamente. Isso ajuda a moderar as temperaturas de regiões próximas a grandes corpos d’água.</p>
+              <h3>Coesão e adesão</h3>
+              <p class="section-intro">Coesão é a atração entre moléculas da mesma substância. Na água, as moléculas se atraem por ligações de hidrogênio. Essa atração ajuda a manter unida uma coluna de água, como nos vasos das plantas.</p>
+              <p class="section-intro">Adesão é a atração entre moléculas de substâncias diferentes. A água, por exemplo, pode aderir às paredes de um tubo estreito ou às paredes dos vasos das plantas.</p>
+              <h3>Capilaridade</h3>
+              <p class="section-intro">Capilaridade é a subida ou descida da água em espaços muito estreitos, como tubos finos e poros do solo. Ocorre pela combinação entre a adesão da água às paredes e a coesão entre suas moléculas.</p>
+              <h3>Tensão superficial</h3>
+              <p class="section-intro">Tensão superficial é como uma película resistente que se forma na superfície da água, causada pela coesão entre as moléculas. Ela explica, por exemplo, por que alguns insetos conseguem se apoiar sobre a água.</p>
             </article>
-            <aside class="side-notes" aria-label="Conferência do exemplo">
-              <div class="note-box"><h3>Exemplo rápido</h3><p>A solução de 2x + 5 = 13 é:</p><div class="answer-chip">x = 4</div></div>
-              <div class="check-box"><h3>Confira</h3><p>Substitua x = 4 na equação:</p><div class="check-equation">2 · 4 + 5 = 13<br>8 + 5 = 13<br>13 = 13 ✓</div></div>
-              <div class="success-note">A igualdade é verdadeira. Portanto, x = 4 é a solução.</div>
+            <aside class="side-notes" aria-label="Resumo das propriedades da água">
+              <div class="note-box"><h3>Ideia principal</h3><p>As ligações de hidrogênio ajudam a explicar a coesão entre moléculas de água e várias de suas propriedades.</p><div class="answer-chip">H₂O</div></div>
+              <div class="check-box"><h3>Conexões</h3><p>Coesão + adesão em espaços estreitos:</p><div class="check-equation">atração entre moléculas<br>+ atração às superfícies<br>= capilaridade</div></div>
+              <div class="success-note">O alto calor específico da água também ajuda a moderar a temperatura de ambientes próximos a grandes corpos d’água.</div>
             </aside>
           </div>
           <div class="lesson-footer"><span></span><button class="button primary" type="button" data-go="exercises">Continuar <span aria-hidden="true">→</span></button></div>
@@ -250,9 +235,9 @@
 
         <section class="lesson-view" id="exercisesView" hidden>
           <div class="exercise-wrap">
-            <div class="exercise-count" id="exerciseCount">8 exercícios</div>
-            <h2 class="exercise-title">Agora é sua vez</h2>
-            <p class="exercise-hint">Resolva todos os exercícios e digite somente o valor de x. As soluções aparecem depois do envio e da sua avaliação.</p>
+            <div class="exercise-count" id="exerciseCount">6 exercícios</div>
+            <h2 class="exercise-title">Propriedades da água</h2>
+            <p class="exercise-hint">Escolha uma alternativa para cada questão. As respostas comentadas aparecem depois do envio e da sua avaliação.</p>
             <form id="answerForm">
               <div class="exercise-items" id="exerciseItems"></div>
               <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
@@ -268,16 +253,49 @@
               </form>
             </section>
             <section class="solutions" id="solutions" hidden aria-live="polite"></section>
-            <section class="records-box" aria-label="Registros do professor">
-              <strong>Registros para o professor</strong>
-              <p id="recordCount">Nenhum envio salvo neste navegador.</p>
-              <button class="button" type="button" id="exportSubmissions">Baixar registros (JSON)</button>
-            </section>
           </div>
           <div class="lesson-footer"><button class="button" type="button" data-go="explanation"><span aria-hidden="true">←</span> Voltar à explicação</button><button class="button" type="button" data-go="review">Ir para revisão <span aria-hidden="true">→</span></button></div>
         </section>
 
-        <section class="lesson-view empty-review" id="reviewView" aria-label="Revisão" hidden></section>
+        <section class="lesson-view empty-review" id="reviewView" aria-label="Revisão" hidden>
+          <div class="exercise-wrap">
+            <div class="exercise-count">3 exercícios</div>
+            <h2 class="exercise-title">Revisão</h2>
+            <p class="exercise-hint">Resolva as expressões e escreva x ou a fração resultante. As soluções aparecem depois do envio e da sua avaliação.</p>
+            <form id="reviewAnswerForm">
+              <div class="exercise-items">
+                <div class="exercise-item">
+                  <h3>Exercício 1</h3>
+                  <div class="review-equation">2x(3 − 9) + 3(x − 1) = 3(2 − 6)(x − 9)</div>
+                  <div class="answer-field"><label for="review-answer-0">Qual é o valor de x?</label><input id="review-answer-0" type="text" autocomplete="off" placeholder="Sua resposta"></div>
+                </div>
+                <div class="exercise-item">
+                  <h3>Exercício 2</h3>
+                  <div class="review-equation"><span class="fraction"><span>5</span><span>7</span></span> + <span class="fraction"><span>9</span><span>11</span></span></div>
+                  <div class="answer-field"><label for="review-answer-1">Qual é o resultado? (ex.: 118/77)</label><input id="review-answer-1" type="text" autocomplete="off" placeholder="Sua resposta"></div>
+                </div>
+                <div class="exercise-item">
+                  <h3>Exercício 3</h3>
+                  <div class="review-equation"><span class="fraction"><span>4</span><span>7</span></span> + <span class="fraction"><span>5</span><span>9</span></span> + <span class="fraction"><span>9</span><span>4</span></span></div>
+                  <div class="answer-field"><label for="review-answer-2">Qual é o resultado? (ex.: 851/252)</label><input id="review-answer-2" type="text" autocomplete="off" placeholder="Sua resposta"></div>
+                </div>
+              </div>
+              <div class="feedback" id="reviewFeedback" role="status" aria-live="polite"></div>
+              <div class="submission-actions"><button class="button primary" type="submit" id="submitReviewAnswers">Enviar respostas</button></div>
+            </form>
+            <section class="difficulty-box" id="reviewDifficultyBox" hidden>
+              <h3>De 0 a 10, o quão difícil você achou?</h3>
+              <p>0 = muito fácil · 10 = muito difícil</p>
+              <form id="reviewDifficultyForm">
+                <div class="difficulty-scale" id="reviewDifficultyScale"></div>
+                <div class="feedback" id="reviewDifficultyFeedback" role="status" aria-live="polite"></div>
+                <button class="button primary" type="submit">Enviar avaliação</button>
+              </form>
+            </section>
+            <section class="solutions" id="reviewSolutions" hidden aria-live="polite"></section>
+          </div>
+          <div class="lesson-footer"><button class="button" type="button" data-go="exercises"><span aria-hidden="true">←</span> Voltar aos exercícios</button></div>
+        </section>
       </section>
 
       <section class="outer-panel complementary" id="extraPanel" hidden>
@@ -300,17 +318,15 @@
       const extraPanel = document.getElementById('extraPanel');
       const outerTabs = [...document.querySelectorAll('.outer-tab')];
       const exercises = [
-        { equation: 'x − 9 = 4', answer: 13, solution: 'Some 9 aos dois lados: x = 4 + 9 = 13.' },
-        { equation: '6x = 48', answer: 8, solution: 'Divida os dois lados por 6: x = 48 ÷ 6 = 8.' },
-        { equation: '2x + 7 = 25', answer: 9, solution: 'Subtraia 7: 2x = 18. Divida por 2: x = 9.' },
-        { equation: '4(x − 2) = 20', answer: 7, solution: 'Divida os dois lados por 4: x − 2 = 5. Some 2: x = 7.' },
-        { equation: '7x − 8 = 3x + 12', answer: 5, solution: 'Subtraia 3x e some 8: 4x = 20. Divida por 4: x = 5.' },
-        { equation: '(x + 5) ÷ 4 = 6', answer: 19, solution: 'Multiplique por 4: x + 5 = 24. Subtraia 5: x = 19.' },
-        { equation: '5(2x − 3) − 4(x + 1) = 3(x + 5) + 2', answer: 12, solution: 'Distribua e simplifique: 6x − 19 = 3x + 17. Subtraia 3x e some 19: 3x = 36. Logo, x = 12.' },
-        { equation: '(2x + 1) ÷ 3 + (x − 2) ÷ 2 = 15 ÷ 2', answer: 7, solution: 'Multiplique tudo por 6: 2(2x + 1) + 3(x − 2) = 45. Simplifique: 7x − 4 = 45, então 7x = 49 e x = 7.' }
+        { question: 'Qual propriedade explica a atração das moléculas de água umas pelas outras?', options: ['Adesão', 'Capilaridade', 'Coesão', 'Solubilidade'], answer: 'C', solution: 'Coesão é a atração entre moléculas da mesma substância.' },
+        { question: 'Por que regiões costeiras costumam apresentar variações de temperatura menores do que regiões continentais próximas?', options: ['A água tem baixo calor específico e aquece muito rápido.', 'A água tem alto calor específico e aquece e esfria mais lentamente.', 'A água impede que a energia solar alcance a costa.', 'O vapor de água elimina completamente as mudanças de temperatura.'], answer: 'B', solution: 'A água tem calor específico alto, então aquece e esfria lentamente e ajuda a moderar as temperaturas próximas.' },
+        { question: 'As ligações de hidrogênio contribuem para a elevada tensão superficial da água. Qual fenômeno é explicado por essa propriedade?', options: ['Alguns insetos conseguem se apoiar sobre a superfície da água.', 'O gelo afunda em água líquida.', 'O sal não se dissolve em água.', 'A água não pode evaporar em temperatura ambiente.'], answer: 'A', solution: 'A tensão superficial forma uma película resistente na superfície da água, permitindo que alguns insetos se apoiem nela.' },
+        { question: 'A densidade da água é máxima perto de 4 °C. Qual é uma consequência importante dessa propriedade em lagos durante o inverno?', options: ['O lago congela primeiro no fundo.', 'O gelo afunda e congela toda a água rapidamente.', 'O gelo permanece na superfície, ajudando a isolar a água abaixo dele.', 'A água líquida fica menos densa que o gelo.'], answer: 'C', solution: 'Ao congelar, a água fica menos densa; o gelo flutua e ajuda a isolar a água abaixo.' },
+        { question: 'A capilaridade ajuda a água a subir pelos vasos estreitos das plantas. Qual alternativa descreve melhor esse processo?', options: ['A adesão da água às paredes e a coesão entre suas moléculas contribuem para a subida.', 'A água sobe porque sua densidade aumenta dentro dos vasos.', 'A tensão superficial impede qualquer movimento da água em tubos estreitos.', 'A capilaridade ocorre apenas quando a água está fervendo.'], answer: 'A', solution: 'A capilaridade resulta da combinação entre a adesão da água às paredes e a coesão entre suas moléculas.' },
+        { question: 'A água pode subir por tubos estreitos ou pelas paredes celulares das plantas. Qual alternativa descreve melhor as propriedades envolvidas nesse fenômeno?', options: ['Coesão, adesão e tensão superficial.', 'Apenas densidade e solubilidade.', 'Apenas calor específico e vaporização.', 'Coesão entre a água e as superfícies sólidas, sem participação de outras forças.'], answer: 'A', solution: 'A subida envolve coesão entre as moléculas de água, adesão às superfícies e tensão superficial.' }
       ];
-      const submissionsKey = 'aula-clara-submissions';
-      const progressKey = 'aula-clara-current-exercises';
+      const progressKey = 'aula-clara-water-properties-exercises';
+      const reviewProgressKey = 'aula-clara-math-review';
       const difficultyBox = document.getElementById('difficultyBox');
       const solutions = document.getElementById('solutions');
 
@@ -319,35 +335,25 @@
         catch { return {}; }
       }
 
-      function getSubmissions() {
-        try {
-          const data = JSON.parse(localStorage.getItem(submissionsKey) || '[]');
-          return Array.isArray(data) ? data : [];
-        } catch { return []; }
-      }
-
-      function updateRecordCount() {
-        const count = getSubmissions().length;
-        document.getElementById('recordCount').textContent = count
-          ? `${count} envio${count === 1 ? '' : 's'} salvo${count === 1 ? '' : 's'} neste navegador.`
-          : 'Nenhum envio salvo neste navegador.';
-      }
-
-      function renderDifficultyScale(selected) {
-        document.getElementById('difficultyScale').innerHTML = Array.from({ length: 11 }, (_, value) => `
-          <span class="difficulty-option"><input type="radio" name="difficulty" id="difficulty-${value}" value="${value}" ${Number(selected) === value ? 'checked' : ''} required><label for="difficulty-${value}">${value}</label></span>`).join('');
+      function renderDifficultyScale(selected, scaleId = 'difficultyScale', fieldName = 'difficulty', idPrefix = 'difficulty') {
+        document.getElementById(scaleId).innerHTML = Array.from({ length: 11 }, (_, value) => `
+          <span class="difficulty-option"><input type="radio" name="${fieldName}" id="${idPrefix}-${value}" value="${value}" ${Number(selected) === value ? 'checked' : ''} required><label for="${idPrefix}-${value}">${value}</label></span>`).join('');
       }
 
       function renderExercises() {
         const progressState = getProgress();
         const container = document.getElementById('exerciseItems');
+        document.getElementById('exerciseCount').textContent = `${exercises.length} exercícios`;
         container.innerHTML = exercises.map((item, index) => `
           <div class="exercise-item">
             <h3>Exercício ${index + 1}</h3>
-            <div class="exercise-equation">${item.equation}</div>
+            <p class="exercise-question">${item.question}</p>
             <div class="answer-field">
-              <label for="answer-${index}">Qual é o valor de x?</label>
-              <input id="answer-${index}" name="answer-${index}" type="text" inputmode="decimal" autocomplete="off" placeholder="Sua resposta" aria-label="Resposta do exercício ${index + 1}" ${progressState.phase === 'submitted' ? 'disabled' : ''}>
+              <label for="answer-${index}">Escolha uma alternativa</label>
+              <select id="answer-${index}" name="answer-${index}" aria-label="Resposta do exercício ${index + 1}" ${progressState.phase === 'submitted' ? 'disabled' : ''}>
+                <option value="">Selecione</option>
+                ${item.options.map((option, optionIndex) => `<option value="${String.fromCharCode(65 + optionIndex)}">${String.fromCharCode(65 + optionIndex)}) ${option}</option>`).join('')}
+              </select>
             </div>
           </div>`).join('');
         exercises.forEach((_, index) => {
@@ -367,7 +373,7 @@
       function showDifficulty() {
         difficultyBox.hidden = false;
         document.getElementById('submitAnswers').disabled = true;
-        document.getElementById('exerciseItems').querySelectorAll('input').forEach(input => { input.disabled = true; });
+        document.getElementById('exerciseItems').querySelectorAll('select').forEach(select => { select.disabled = true; });
       }
 
       function showSolutions(record) {
@@ -376,12 +382,12 @@
         document.getElementById('difficultyFeedback').textContent = `Avaliação registrada: ${record.difficulty}/10.`;
         document.getElementById('difficultyFeedback').className = 'feedback good';
         solutions.hidden = false;
-        solutions.innerHTML = '<h3>Soluções dos exercícios</h3>' + exercises.map((item, index) => '<article class="solution-item"><h4>Exercício ' + (index + 1) + ': ' + item.equation + '</h4><p>' + item.solution + '</p></article>').join('') + '<button class="button" type="button" id="newAttempt">Iniciar nova tentativa</button>';
+        solutions.innerHTML = '<h3>Respostas dos exercícios</h3>' + exercises.map((item, index) => '<article class="solution-item"><h4>Exercício ' + (index + 1) + ': alternativa ' + item.answer + '</h4><p>' + item.solution + '</p></article>').join('') + '<button class="button" type="button" id="newAttempt">Iniciar nova tentativa</button>';
         document.getElementById('newAttempt').addEventListener('click', () => {
           sessionStorage.removeItem(progressKey);
           document.getElementById('answerForm').reset();
           document.getElementById('submitAnswers').disabled = false;
-          document.getElementById('exerciseItems').querySelectorAll('input').forEach(input => { input.disabled = false; });
+          document.getElementById('exerciseItems').querySelectorAll('select').forEach(select => { select.disabled = false; });
           document.getElementById('feedback').textContent = '';
           document.getElementById('feedback').className = 'feedback';
           document.getElementById('difficultyFeedback').textContent = '';
@@ -394,26 +400,58 @@
         });
       }
 
-      function saveSubmission(record) {
-        const submissions = getSubmissions();
-        submissions.push(record);
-        localStorage.setItem(submissionsKey, JSON.stringify(submissions));
-        updateRecordCount();
+      function getReviewProgress() {
+        try { return JSON.parse(sessionStorage.getItem(reviewProgressKey) || '{}'); }
+        catch { return {}; }
       }
 
-      function exportSubmissions() {
-        const records = getSubmissions();
-        if (!records.length) {
-          document.getElementById('recordCount').textContent = 'Ainda não há envios para baixar.';
-          return;
-        }
-        const blob = new Blob([JSON.stringify(records, null, 2)], { type: 'application/json;charset=utf-8' });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'respostas-aula-clara.json';
-        link.click();
-        setTimeout(() => URL.revokeObjectURL(url), 0);
+      function setReviewInputsDisabled(disabled) {
+        document.querySelectorAll('#reviewView .answer-field input').forEach(input => { input.disabled = disabled; });
+        document.getElementById('submitReviewAnswers').disabled = disabled;
+      }
+
+      function showReviewDifficulty() {
+        document.getElementById('reviewDifficultyBox').hidden = false;
+        setReviewInputsDisabled(true);
+      }
+
+      function showReviewSolutions(state) {
+        showReviewDifficulty();
+        document.getElementById('reviewDifficultyForm').hidden = true;
+        document.getElementById('reviewDifficultyFeedback').textContent = `Avaliação registrada: ${state.difficulty}/10.`;
+        document.getElementById('reviewDifficultyFeedback').className = 'feedback good';
+        const reviewSolutions = document.getElementById('reviewSolutions');
+        reviewSolutions.hidden = false;
+        reviewSolutions.innerHTML = `
+          <h3>Soluções da revisão</h3>
+          <article class="solution-item"><h4>Exercício 1: x = 37</h4><p>Distribua e simplifique: −12x + 3x − 3 = −12x + 108. Some 12x aos dois lados: 3x − 3 = 108. Some 3 e divida por 3: x = 37.</p></article>
+          <article class="solution-item"><h4>Exercício 2: <span class="fraction"><span>118</span><span>77</span></span></h4><p>Use o denominador comum 77: <span class="fraction"><span>5</span><span>7</span></span> = <span class="fraction"><span>55</span><span>77</span></span> e <span class="fraction"><span>9</span><span>11</span></span> = <span class="fraction"><span>63</span><span>77</span></span>. Some os numeradores: <span class="fraction"><span>55 + 63</span><span>77</span></span> = <span class="fraction"><span>118</span><span>77</span></span>.</p></article>
+          <article class="solution-item"><h4>Exercício 3: <span class="fraction"><span>851</span><span>252</span></span></h4><p>O denominador comum é 252: <span class="fraction"><span>4</span><span>7</span></span> = <span class="fraction"><span>144</span><span>252</span></span>, <span class="fraction"><span>5</span><span>9</span></span> = <span class="fraction"><span>140</span><span>252</span></span> e <span class="fraction"><span>9</span><span>4</span></span> = <span class="fraction"><span>567</span><span>252</span></span>. Some os numeradores: <span class="fraction"><span>144 + 140 + 567</span><span>252</span></span> = <span class="fraction"><span>851</span><span>252</span></span>.</p></article>
+          <button class="button" type="button" id="newReviewAttempt">Iniciar nova tentativa</button>`;
+        document.getElementById('newReviewAttempt').addEventListener('click', () => {
+          sessionStorage.removeItem(reviewProgressKey);
+          document.getElementById('reviewAnswerForm').reset();
+          document.getElementById('reviewFeedback').textContent = '';
+          document.getElementById('reviewFeedback').className = 'feedback';
+          document.getElementById('reviewDifficultyFeedback').textContent = '';
+          document.getElementById('reviewDifficultyFeedback').className = 'feedback';
+          document.getElementById('reviewDifficultyForm').hidden = false;
+          document.getElementById('reviewDifficultyBox').hidden = true;
+          reviewSolutions.hidden = true;
+          reviewSolutions.innerHTML = '';
+          setReviewInputsDisabled(false);
+          renderDifficultyScale(undefined, 'reviewDifficultyScale', 'reviewDifficulty', 'review-difficulty');
+        });
+      }
+
+      function renderReview() {
+        const state = getReviewProgress();
+        document.querySelectorAll('#reviewView .answer-field input').forEach((input, index) => {
+          input.value = state.answers?.[index] ?? '';
+        });
+        renderDifficultyScale(state.difficulty, 'reviewDifficultyScale', 'reviewDifficulty', 'review-difficulty');
+        if (state.phase === 'difficulty') showReviewDifficulty();
+        if (state.phase === 'submitted') showReviewSolutions(state);
       }
 
       function showLesson(name) {
@@ -441,14 +479,13 @@
       document.getElementById('answerForm').addEventListener('submit', event => {
         event.preventDefault();
         const feedback = document.getElementById('feedback');
-        const answers = exercises.map((_, index) => document.getElementById(`answer-${index}`).value.trim());
-        const values = answers.map(value => Number(value.replace(',', '.')));
-        if (answers.some((value, index) => !value || !Number.isFinite(values[index]))) {
-          feedback.textContent = 'Preencha todos os exercícios com um número antes de enviar.';
+        const answers = exercises.map((_, index) => document.getElementById(`answer-${index}`).value);
+        if (answers.some(value => !value)) {
+          feedback.textContent = 'Escolha uma alternativa em todos os exercícios antes de enviar.';
           feedback.className = 'feedback try-again';
           return;
         }
-        const nextState = { phase: 'difficulty', answers: values };
+        const nextState = { phase: 'difficulty', answers };
         sessionStorage.setItem(progressKey, JSON.stringify(nextState));
         feedback.textContent = 'Respostas recebidas. Agora avalie a dificuldade para ver as soluções.';
         feedback.className = 'feedback good';
@@ -466,24 +503,46 @@
           return;
         }
         const progressState = getProgress();
-        const record = {
-          submittedAt: new Date().toISOString(),
-          answers: progressState.answers,
-          difficulty: Number(selected.value)
-        };
-        try {
-          saveSubmission(record);
-          const completeState = { ...progressState, ...record, phase: 'submitted' };
-          sessionStorage.setItem(progressKey, JSON.stringify(completeState));
-          showSolutions(completeState);
-        } catch {
-          feedback.textContent = 'Não foi possível salvar neste navegador. Suas respostas continuam abertas; tente novamente.';
-          feedback.className = 'feedback try-again';
-        }
+        const completeState = { ...progressState, difficulty: Number(selected.value), phase: 'submitted' };
+        sessionStorage.setItem(progressKey, JSON.stringify(completeState));
+        showSolutions(completeState);
       });
-      document.getElementById('exportSubmissions').addEventListener('click', exportSubmissions);
+      document.getElementById('reviewAnswerForm').addEventListener('submit', event => {
+        event.preventDefault();
+        const feedback = document.getElementById('reviewFeedback');
+        const answers = [...document.querySelectorAll('#reviewView .answer-field input')].map(input => input.value.trim());
+        if (answers.some(answer => !answer)) {
+          feedback.textContent = 'Preencha todos os exercícios antes de enviar.';
+          feedback.className = 'feedback try-again';
+          return;
+        }
+        sessionStorage.setItem(reviewProgressKey, JSON.stringify({ phase: 'difficulty', answers }));
+        feedback.textContent = 'Respostas recebidas. Agora avalie a dificuldade para ver as soluções.';
+        feedback.className = 'feedback good';
+        showReviewDifficulty();
+        document.getElementById('reviewDifficultyBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+      document.getElementById('reviewDifficultyForm').addEventListener('submit', event => {
+        event.preventDefault();
+        const selected = document.querySelector('input[name="reviewDifficulty"]:checked');
+        const feedback = document.getElementById('reviewDifficultyFeedback');
+        if (!selected) {
+          feedback.textContent = 'Escolha uma nota de 0 a 10.';
+          feedback.className = 'feedback try-again';
+          return;
+        }
+        const completeState = { ...getReviewProgress(), difficulty: Number(selected.value), phase: 'submitted' };
+        sessionStorage.setItem(reviewProgressKey, JSON.stringify(completeState));
+        showReviewSolutions(completeState);
+      });
+      document.querySelectorAll('.hint-toggle').forEach(button => button.addEventListener('click', () => {
+        const hint = button.nextElementSibling;
+        const visible = hint.classList.toggle('visible');
+        button.setAttribute('aria-expanded', String(visible));
+        button.textContent = visible ? 'Ocultar dica' : 'Mostrar dica';
+      }));
       renderExercises();
-      updateRecordCount();
+      renderReview();
     })();
   </script>
 </body>
