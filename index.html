@@ -185,7 +185,6 @@
       <h2 class="course-title">Propriedades da água</h2>
       <nav class="outer-nav" aria-label="Seções">
         <button class="outer-tab" type="button" data-section="today" aria-selected="true"><span class="nav-icon" aria-hidden="true">✓</span>Tarefas de Hoje</button>
-        <button class="outer-tab" type="button" data-section="extra" aria-selected="false"><span class="nav-icon" aria-hidden="true">＋</span>Problemas complementares</button>
       </nav>
       <div class="lesson-progress" id="lessonProgress">
         <div class="progress-heading">Etapas de hoje</div>
@@ -297,11 +296,6 @@
           <div class="lesson-footer"><button class="button" type="button" data-go="exercises"><span aria-hidden="true">←</span> Voltar aos exercícios</button></div>
         </section>
       </section>
-
-      <section class="outer-panel complementary" id="extraPanel" hidden>
-        <div class="page-heading"><h1>Problemas complementares</h1></div>
-        <div class="lesson-footer"><button class="button" type="button" data-section-go="today"><span aria-hidden="true">←</span> Voltar às tarefas</button></div>
-      </section>
     </main>
   </div>
 
@@ -314,8 +308,6 @@
         review: document.getElementById('reviewView')
       };
       const progress = [...document.querySelectorAll('.progress-step')];
-      const todayPanel = document.getElementById('todayPanel');
-      const extraPanel = document.getElementById('extraPanel');
       const outerTabs = [...document.querySelectorAll('.outer-tab')];
       const exercises = [
         { question: 'Qual propriedade explica a atração das moléculas de água umas pelas outras?', options: ['Adesão', 'Capilaridade', 'Coesão', 'Solubilidade'], answer: 'C', solution: 'Coesão é a atração entre moléculas da mesma substância.' },
@@ -465,17 +457,15 @@
       }
 
       function showSection(name) {
-        const today = name === 'today';
-        todayPanel.hidden = !today;
-        extraPanel.hidden = today;
-        document.getElementById('lessonProgress').hidden = !today;
-        outerTabs.forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.section === name)));
+        if (name === 'today') {
+          document.getElementById('todayPanel').hidden = false;
+          outerTabs.forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.section === name)));
+        }
       }
 
       lessonTabs.forEach(tab => tab.addEventListener('click', () => showLesson(tab.dataset.lesson)));
       outerTabs.forEach(tab => tab.addEventListener('click', () => showSection(tab.dataset.section)));
       document.querySelectorAll('[data-go]').forEach(button => button.addEventListener('click', () => showLesson(button.dataset.go)));
-      document.querySelectorAll('[data-section-go]').forEach(button => button.addEventListener('click', () => showSection(button.dataset.sectionGo)));
       document.getElementById('answerForm').addEventListener('submit', event => {
         event.preventDefault();
         const feedback = document.getElementById('feedback');
@@ -535,12 +525,6 @@
         sessionStorage.setItem(reviewProgressKey, JSON.stringify(completeState));
         showReviewSolutions(completeState);
       });
-      document.querySelectorAll('.hint-toggle').forEach(button => button.addEventListener('click', () => {
-        const hint = button.nextElementSibling;
-        const visible = hint.classList.toggle('visible');
-        button.setAttribute('aria-expanded', String(visible));
-        button.textContent = visible ? 'Ocultar dica' : 'Mostrar dica';
-      }));
       renderExercises();
       renderReview();
     })();
