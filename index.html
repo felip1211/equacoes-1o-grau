@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <title>Ciências — Propriedades da água</title>
+  <title>Matemática — Conversão de unidades</title>
   <style>
     :root {
       color-scheme: light;
@@ -97,6 +97,12 @@
     .review-equation { min-height: 76px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4px; background: var(--blue-soft); border-radius: 10px; padding: 18px; margin-bottom: 14px; font: 600 clamp(21px, 3vw, 30px) Georgia, serif; line-height: 1.4; }
     .exercise-items { display: grid; gap: 14px; }
     .exercise-item { border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+    .exercise-item.correct { border-color: #72c894; background: #f1fbf4; }
+    .exercise-item.incorrect { border-color: #e39a9a; background: #fff5f5; }
+    .answer-result { display: none; margin-top: 10px; font-size: 14px; font-weight: 650; }
+    .exercise-item.correct .answer-result, .exercise-item.incorrect .answer-result { display: block; }
+    .exercise-item.correct .answer-result { color: #146d37; }
+    .exercise-item.incorrect .answer-result { color: #a52626; }
     .exercise-item h3 { margin: 0 0 12px; font-size: 15px; }
     .exercise-item .exercise-equation { margin-bottom: 14px; padding: 15px; font-size: clamp(18px, 3.5vw, 28px); overflow-wrap: anywhere; }
     .submission-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
@@ -174,23 +180,20 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="brand"><span class="brand-mark" aria-hidden="true">H₂O</span>Ciências</div>
+    <div class="brand"><span class="brand-mark" aria-hidden="true">↔</span>Matemática</div>
     <div class="topbar-divider" aria-hidden="true"></div>
-    <div class="topbar-label">Propriedades da água</div>
+    <div class="topbar-label">Conversão de unidades</div>
   </header>
 
   <div class="layout">
     <aside aria-label="Navegação da aula">
-      <div class="course-label">Ciências</div>
-      <h2 class="course-title">Propriedades da água</h2>
-      <nav class="outer-nav" aria-label="Seções">
-        <button class="outer-tab" type="button" data-section="today" aria-selected="true"><span class="nav-icon" aria-hidden="true">✓</span>Tarefas de Hoje</button>
-      </nav>
+      <div class="course-label">Matemática</div>
+      <h2 class="course-title">Conversão de unidades</h2>
       <div class="lesson-progress" id="lessonProgress">
         <div class="progress-heading">Etapas de hoje</div>
-        <div class="progress-step active" data-progress="explanation"><span class="step-number">1</span><span>Conhecer as<br>propriedades da água</span></div>
-        <div class="progress-step" data-progress="exercises"><span class="step-number">2</span><span>Responder às<br>questões</span></div>
-        <div class="progress-step" data-progress="review"><span class="step-number">3</span><span>Resolver a<br>revisão</span></div>
+        <div class="progress-step active" data-progress="explanation"><span class="step-number">1</span><span>Aprender a<br>converter unidades</span></div>
+        <div class="progress-step" data-progress="exercises"><span class="step-number">2</span><span>Praticar conversões</span></div>
+        <div class="progress-step" data-progress="review"><span class="step-number">3</span><span>Revisar frações</span></div>
       </div>
     </aside>
 
@@ -209,17 +212,23 @@
         <section class="lesson-view" id="explanationView">
           <div class="explanation-grid">
             <article class="lesson-copy">
-              <h2>Adição de frações</h2>
-              <p class="lead">Para somar frações com denominadores diferentes, primeiro reescreva cada uma usando um denominador comum. Depois, some os numeradores.</p>
-              <h3>Exemplo</h3>
-              <p class="section-intro">Na conta <span class="fraction"><span>1</span><span>2</span></span> + <span class="fraction"><span>1</span><span>3</span></span> + <span class="fraction"><span>1</span><span>4</span></span> + <span class="fraction"><span>1</span><span>6</span></span>, os denominadores são diferentes. Podemos usar 12 como denominador comum:</p>
-              <ul><li><span class="fraction"><span>1</span><span>2</span></span> vira <span class="fraction"><span>6</span><span>12</span></span></li><li><span class="fraction"><span>1</span><span>3</span></span> vira <span class="fraction"><span>4</span><span>12</span></span></li><li><span class="fraction"><span>1</span><span>4</span></span> vira <span class="fraction"><span>3</span><span>12</span></span></li><li><span class="fraction"><span>1</span><span>6</span></span> vira <span class="fraction"><span>2</span><span>12</span></span></li></ul>
-              <p class="section-intro">Como todas as frações agora têm 12 embaixo, somamos os numeradores: <span class="fraction"><span>6</span><span>12</span></span> + <span class="fraction"><span>4</span><span>12</span></span> + <span class="fraction"><span>3</span><span>12</span></span> + <span class="fraction"><span>2</span><span>12</span></span> = <span class="fraction"><span>15</span><span>12</span></span>.</p>
+              <h2>Conversão de unidades</h2>
+              <p class="lead">Converter unidades é expressar a mesma quantidade em outra unidade. Para isso, use uma relação de equivalência e multiplique ou divida pelo fator adequado.</p>
+              <h3>Comprimento</h3>
+              <p class="section-intro">Como 1 km = 1.000 m, para converter quilômetros em metros multiplique por 1.000. Para converter metros em quilômetros, divida por 1.000.</p>
+              <div class="worked-step"><span class="step-badge">1</span><div><strong>De quilômetros para metros</strong><p>3,2 km = 3,2 × 1.000 = 3.200 m</p></div></div>
+              <div class="worked-step"><span class="step-badge">2</span><div><strong>De metros para quilômetros</strong><p>750 m = 750 ÷ 1.000 = 0,75 km</p></div></div>
+              <h3>Unidades métricas</h3>
+              <p class="section-intro">Cada passo entre unidades vizinhas costuma mudar por um fator de 10:</p>
+              <ul><li>Comprimento: km → hm → dam → m → dm → cm → mm</li><li>Massa: kg → hg → dag → g → dg → cg → mg</li><li>Capacidade: kL → hL → daL → L → dL → cL → mL</li></ul>
+              <p class="section-intro">Ao andar para uma unidade menor, multiplique por 10 a cada passo; para uma unidade maior, divida por 10 a cada passo. Assim, 2,5 m = 250 cm (dois passos para uma unidade menor: ×100).</p>
+              <h3>Outras grandezas</h3>
+              <p class="section-intro">Temperaturas, tempo e algumas outras grandezas usam regras próprias. Por exemplo, 1 hora = 60 minutos, então 2,5 horas = 150 minutos.</p>
             </article>
-            <aside class="side-notes" aria-label="Resumo da adição de frações">
-              <div class="note-box"><h3>Ideia principal</h3><p>Frações com denominadores diferentes precisam de um denominador comum antes de somar.</p><div class="answer-chip"><span class="fraction"><span>1</span><span>12</span></span></div></div>
-              <div class="check-box"><h3>Passos</h3><p>Para somar frações:</p><div class="check-equation">denominador comum<br>→ reescrever frações<br>→ somar numeradores</div></div>
-              <div class="success-note">Mantenha o denominador comum e some somente os numeradores.</div>
+            <aside class="side-notes" aria-label="Resumo de conversão de unidades">
+              <div class="note-box"><h3>Ideia principal</h3><p>Use uma equivalência entre as unidades e aplique o fator de conversão adequado.</p><div class="answer-chip">×10 por passo</div></div>
+              <div class="check-box"><h3>Sistema métrico</h3><p>Para cada passo entre unidades vizinhas:</p><div class="check-equation">unidade menor<br>→ multiplique por 10<br><br>unidade maior<br>→ divida por 10</div></div>
+              <div class="success-note">Tempo e temperatura podem usar fatores de conversão próprios.</div>
             </aside>
           </div>
           <div class="lesson-footer"><span></span><button class="button primary" type="button" data-go="exercises">Continuar <span aria-hidden="true">→</span></button></div>
@@ -228,8 +237,8 @@
         <section class="lesson-view" id="exercisesView" hidden>
           <div class="exercise-wrap">
             <div class="exercise-count" id="exerciseCount">6 exercícios</div>
-            <h2 class="exercise-title">Adição de frações</h2>
-            <p class="exercise-hint">Some as frações e escreva cada resultado. As respostas aparecem depois do envio e da sua avaliação.</p>
+            <h2 class="exercise-title">Conversão de unidades</h2>
+            <p class="exercise-hint">Resolva os problemas e escreva cada resultado. As respostas aparecem depois do envio e da sua avaliação.</p>
             <form id="answerForm">
               <div class="exercise-items" id="exerciseItems"></div>
               <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
@@ -251,16 +260,11 @@
 
         <section class="lesson-view empty-review" id="reviewView" aria-label="Revisão" hidden>
           <div class="exercise-wrap">
-            <div class="exercise-count">4 exercícios</div>
-            <h2 class="exercise-title">Revisão</h2>
-            <p class="exercise-hint">Responda às quatro questões sobre as propriedades da água. As soluções aparecem depois do envio e da sua avaliação.</p>
+            <div class="exercise-count" id="reviewExerciseCount">3 exercícios</div>
+            <h2 class="exercise-title">Revisão: adição de frações</h2>
+            <p class="exercise-hint">Resolva os problemas e escreva cada fração. As soluções aparecem depois do envio e da sua avaliação.</p>
             <form id="reviewAnswerForm">
-              <div class="exercise-items">
-                <div class="exercise-item"><h3>Exercício 1</h3><p class="exercise-question">Que propriedade mantém as moléculas de água unidas umas às outras, em razão das ligações de hidrogênio?</p><div class="answer-field"><label for="review-answer-0">Escolha uma alternativa</label><select id="review-answer-0"><option value="">Selecione</option><option value="A">A) Adesão</option><option value="B">B) Capilaridade</option><option value="C">C) Coesão</option><option value="D">D) Solubilidade</option></select></div></div>
-                <div class="exercise-item"><h3>Exercício 2</h3><p class="exercise-question">O alto calor latente de vaporização da água contribui principalmente para qual função nos seres vivos?</p><div class="answer-field"><label for="review-answer-1">Escolha uma alternativa</label><select id="review-answer-1"><option value="">Selecione</option><option value="A">A) Regular a temperatura corporal</option><option value="B">B) Dissolver substâncias apolares</option><option value="C">C) Formar moléculas de glicose</option><option value="D">D) Transportar oxigênio no sangue</option></select></div></div>
-                <div class="exercise-item"><h3>Exercício 3</h3><p class="exercise-question">Uma mesma massa de água líquida e de gelo é comparada à mesma pressão. Qual afirmação está correta?</p><div class="answer-field"><label for="review-answer-2">Escolha uma alternativa</label><select id="review-answer-2"><option value="">Selecione</option><option value="A">A) A água líquida ocupa mais volume, pois é menos densa que o gelo.</option><option value="B">B) O gelo ocupa mais volume, pois é menos denso que a água líquida.</option><option value="C">C) Os dois ocupam o mesmo volume, pois têm a mesma massa.</option><option value="D">D) O gelo ocupa menos volume, pois sua densidade é maior.</option></select></div></div>
-                <div class="exercise-item"><h3>Exercício 4: Densidade e vida aquática</h3><p class="exercise-question">No inverno, a água próxima à superfície de um lago pode congelar, enquanto a água abaixo permanece líquida. Qual propriedade contribui para esse fenômeno?</p><div class="answer-field"><label for="review-answer-3">Escolha uma alternativa</label><select id="review-answer-3"><option value="">Selecione</option><option value="A">A) A água líquida atinge sua densidade máxima por volta de 4 °C; o gelo, menos denso, fica na superfície.</option><option value="B">B) O gelo é mais denso e afunda, mantendo a superfície líquida.</option><option value="C">C) A água líquida tem densidade máxima a 0 °C.</option><option value="D">D) A densidade da água diminui continuamente conforme ela esfria.</option></select></div></div>
-              </div>
+              <div class="exercise-items" id="reviewExerciseItems"></div>
               <div class="feedback" id="reviewFeedback" role="status" aria-live="polite"></div>
               <div class="submission-actions"><button class="button primary" type="submit" id="submitReviewAnswers">Enviar respostas</button></div>
             </form>
@@ -278,6 +282,7 @@
           <div class="lesson-footer"><button class="button" type="button" data-go="exercises"><span aria-hidden="true">←</span> Voltar aos exercícios</button></div>
         </section>
       </section>
+
     </main>
   </div>
 
@@ -290,17 +295,21 @@
         review: document.getElementById('reviewView')
       };
       const progress = [...document.querySelectorAll('.progress-step')];
-      const outerTabs = [...document.querySelectorAll('.outer-tab')];
       const exercises = [
-        { question: '<span class="fraction"><span>1</span><span>2</span></span> + <span class="fraction"><span>1</span><span>4</span></span> =', answer: '<span class="fraction"><span>3</span><span>4</span></span>' },
-        { question: '<span class="fraction"><span>1</span><span>3</span></span> + <span class="fraction"><span>1</span><span>6</span></span> =', answer: '<span class="fraction"><span>1</span><span>2</span></span>' },
-        { question: '<span class="fraction"><span>2</span><span>5</span></span> + <span class="fraction"><span>1</span><span>10</span></span> =', answer: '<span class="fraction"><span>1</span><span>2</span></span>' },
-        { question: '<span class="fraction"><span>1</span><span>2</span></span> + <span class="fraction"><span>1</span><span>3</span></span> + <span class="fraction"><span>1</span><span>6</span></span> =', answer: '1' },
-        { question: '<span class="fraction"><span>1</span><span>4</span></span> + <span class="fraction"><span>1</span><span>3</span></span> + <span class="fraction"><span>1</span><span>6</span></span> =', answer: '<span class="fraction"><span>3</span><span>4</span></span>' },
-        { question: '<span class="fraction"><span>1</span><span>2</span></span> + <span class="fraction"><span>1</span><span>3</span></span> + <span class="fraction"><span>1</span><span>4</span></span> + <span class="fraction"><span>1</span><span>6</span></span> =', answer: '1<span class="fraction"><span>1</span><span>4</span></span>' }
+        { question: 'O diâmetro de uma roda-gigante é de 443 pés. Sabendo que 1 pé = 12 polegadas e 1 polegada = 2,54 cm, qual é aproximadamente o diâmetro em cm?', answer: '13.502,64 cm', numericAnswer: 13502.64, tolerance: 0.5, unit: 'cm' },
+        { question: 'Uma caixa-d’água pode conter, no máximo, 625.000 cm³ de água. Sabendo que 1 cm³ = 1 mL e 1.000 mL = 1 L, qual é essa capacidade em litros?', answer: '625 L', numericAnswer: 625, unit: 'L' },
+        { question: 'Uma cooperativa separou 4 m³ de leite. Sabendo que 1 m³ = 1.000 L e 1 L = 1.000 mL, quantos mililitros de leite foram separados?', answer: '4.000.000 mL', numericAnswer: 4000000, unit: 'mL' },
+        { question: 'Converta 20 mL em litros. Considere 1 L = 1.000 cm³ = 1.000 mL.', answer: '0,02 L', numericAnswer: 0.02, unit: 'L' },
+        { question: 'Converta 0,2 L em cm³.', answer: '200 cm³', numericAnswer: 200, unit: 'cm³' },
+        { question: 'Converta 7.500 cm³ em litros.', answer: '7,5 L', numericAnswer: 7.5, unit: 'L' }
       ];
-      const progressKey = 'aula-clara-fractions-exercises-v2';
-      const reviewProgressKey = 'aula-clara-water-review-v2';
+      const reviewExercises = [
+        { question: 'Kárita usou <span class="fraction"><span>1</span><span>4</span></span> do salário para pagar o aluguel, <span class="fraction"><span>1</span><span>6</span></span> para as compras e <span class="fraction"><span>1</span><span>55</span></span> para as contas de casa. Que fração do salário ela gastou ao todo?', answer: '<span class="fraction"><span>287</span><span>660</span></span>', numericAnswer: 287 / 660, solution: 'Com denominador comum 660: <span class="fraction"><span>165</span><span>660</span></span> + <span class="fraction"><span>110</span><span>660</span></span> + <span class="fraction"><span>12</span><span>660</span></span> = <span class="fraction"><span>287</span><span>660</span></span>.' },
+        { question: 'Um estudante passou <span class="fraction"><span>5</span><span>12</span></span> do dia estudando, <span class="fraction"><span>1</span><span>6</span></span> praticando esportes e <span class="fraction"><span>1</span><span>8</span></span> se alimentando. Que fração do dia ocupou com essas atividades?', answer: '<span class="fraction"><span>17</span><span>24</span></span>', numericAnswer: 17 / 24, solution: 'Com denominador comum 24: <span class="fraction"><span>10</span><span>24</span></span> + <span class="fraction"><span>4</span><span>24</span></span> + <span class="fraction"><span>3</span><span>24</span></span> = <span class="fraction"><span>17</span><span>24</span></span>.' },
+        { question: 'Um pedreiro usou <span class="fraction"><span>1</span><span>5</span></span> de um saco de cimento em um serviço e <span class="fraction"><span>2</span><span>3</span></span> do mesmo saco em outro. Que fração do saco ele usou ao todo?', answer: '<span class="fraction"><span>13</span><span>15</span></span>', numericAnswer: 13 / 15, solution: 'Com denominador comum 15: <span class="fraction"><span>3</span><span>15</span></span> + <span class="fraction"><span>10</span><span>15</span></span> = <span class="fraction"><span>13</span><span>15</span></span>.' }
+      ];
+      const progressKey = 'aula-clara-unit-conversion-exercises-v1';
+      const reviewProgressKey = 'aula-clara-fractions-review-v1';
       const difficultyBox = document.getElementById('difficultyBox');
       const solutions = document.getElementById('solutions');
 
@@ -321,8 +330,9 @@
         container.innerHTML = exercises.map((item, index) => `
           <div class="exercise-item">
             <h3>Exercício ${index + 1}</h3>
-            <div class="exercise-equation">${item.question}</div>
-            <div class="answer-field"><label for="answer-${index}">Resultado</label><input id="answer-${index}" name="answer-${index}" type="text" autocomplete="off" placeholder="Sua resposta" ${progressState.phase === 'submitted' ? 'disabled' : ''}></div>
+            <p class="exercise-question">${item.question}</p>
+            <div class="answer-field"><label for="answer-${index}">Resultado</label><input id="answer-${index}" name="answer-${index}" type="text" inputmode="decimal" autocomplete="off" placeholder="Sua resposta" ${progressState.phase === 'submitted' ? 'disabled' : ''}></div>
+            <div class="answer-result" aria-live="polite"></div>
           </div>`).join('');
         exercises.forEach((_, index) => {
           const input = document.getElementById(`answer-${index}`);
@@ -333,6 +343,7 @@
             sessionStorage.setItem(progressKey, JSON.stringify(draft));
           });
         });
+        if (progressState.phase === 'difficulty' || progressState.phase === 'submitted') markExerciseAnswers(progressState.answers || []);
         renderDifficultyScale(progressState.difficulty);
         if (progressState.phase === 'difficulty') showDifficulty();
         if (progressState.phase === 'submitted') showSolutions(progressState);
@@ -354,6 +365,7 @@
         document.getElementById('newAttempt').addEventListener('click', () => {
           sessionStorage.removeItem(progressKey);
           document.getElementById('answerForm').reset();
+          clearAnswerMarks('#exerciseItems');
           document.getElementById('submitAnswers').disabled = false;
           document.getElementById('exerciseItems').querySelectorAll('input').forEach(input => { input.disabled = false; });
           document.getElementById('feedback').textContent = '';
@@ -368,13 +380,81 @@
         });
       }
 
+      function parseFractionAnswer(value) {
+        const fractionValues = { '½': 0.5, '⅓': 1 / 3, '¼': 0.25, '⅙': 1 / 6, '⅖': 0.4, '¾': 0.75 };
+        const raw = String(value || '').trim();
+        const spacedMixed = raw.match(/^(\d+)\s+(\d+)\s*\/\s*(\d+)$/);
+        if (spacedMixed && Number(spacedMixed[3])) return Number(spacedMixed[1]) + Number(spacedMixed[2]) / Number(spacedMixed[3]);
+        const text = raw.replace(/\s+/g, '');
+        if (Object.hasOwn(fractionValues, text)) return fractionValues[text];
+        const mixedGlyph = text.match(/^(\d+)(½|¼|¾)$/);
+        if (mixedGlyph) return Number(mixedGlyph[1]) + fractionValues[mixedGlyph[2]];
+        const mixed = text.match(/^(\d+)(\d+)\/(\d+)$/);
+        if (mixed && Number(mixed[3])) return Number(mixed[1]) + Number(mixed[2]) / Number(mixed[3]);
+        const fraction = text.match(/^(-?\d+)\/(\d+)$/);
+        if (fraction && Number(fraction[2])) return Number(fraction[1]) / Number(fraction[2]);
+        const decimal = Number(text.replace(',', '.'));
+        return text && Number.isFinite(decimal) ? decimal : NaN;
+      }
+
+      function parseMeasurementAnswer(value, expectedUnit) {
+        let raw = String(value || '').trim().toLowerCase().replace(/\s+/g, ' ');
+        const unitAliases = {
+          m: ['m', 'metro', 'metros'],
+          l: ['l', 'litro', 'litros'],
+          ml: ['ml', 'mililitro', 'mililitros'],
+          polegadas: ['polegada', 'polegadas', 'in', 'inch', 'inches'],
+          'cm³': ['cm³', 'cm3', 'centímetro cúbico', 'centímetros cúbicos'],
+          cm: ['cm', 'centímetro', 'centímetros']
+        };
+        let unitValid = true;
+        const entered = Object.entries(unitAliases).find(([, aliases]) => aliases.some(alias => raw.endsWith(` ${alias}`) || raw === alias));
+        if (entered) {
+          unitValid = entered[0] === expectedUnit;
+          const suffix = entered[1].find(alias => raw.endsWith(` ${alias}`) || raw === alias);
+          raw = raw === suffix ? '' : raw.slice(0, -(suffix.length + 1)).trim();
+        }
+        raw = raw.includes(',') ? raw.replace(/\./g, '').replace(',', '.') : raw.replace(/\.(?=\d{3}(?:\D|$))/g, '');
+        raw = raw.replace(/\s/g, '');
+        const number = Number(raw);
+        return { value: raw && Number.isFinite(number) ? number : NaN, unitValid };
+      }
+
+      function markExerciseAnswers(answers) {
+        document.querySelectorAll('#exerciseItems .exercise-item').forEach((card, index) => {
+          const parsed = parseMeasurementAnswer(answers[index], exercises[index].unit);
+          const correct = Math.abs(parsed.value - exercises[index].numericAnswer) < (exercises[index].tolerance || 1e-9) && parsed.unitValid;
+          card.classList.toggle('correct', correct);
+          card.classList.toggle('incorrect', !correct);
+          const result = card.querySelector('.answer-result');
+          result.innerHTML = correct ? 'Correto!' : `Incorreto. Gabarito: ${exercises[index].answer}`;
+        });
+      }
+
+      function markReviewAnswers(answers) {
+        document.querySelectorAll('#reviewView .exercise-item').forEach((card, index) => {
+          const correct = Math.abs(parseFractionAnswer(answers[index]) - reviewExercises[index].numericAnswer) < 1e-9;
+          card.classList.toggle('correct', correct);
+          card.classList.toggle('incorrect', !correct);
+          card.querySelector('.answer-result').innerHTML = correct ? 'Correto!' : `Incorreto. Gabarito: ${reviewExercises[index].answer}`;
+        });
+      }
+
+      function clearAnswerMarks(container) {
+        document.querySelectorAll(`${container} .exercise-item`).forEach(card => {
+          card.classList.remove('correct', 'incorrect');
+          const result = card.querySelector('.answer-result');
+          if (result) result.textContent = '';
+        });
+      }
+
       function getReviewProgress() {
         try { return JSON.parse(sessionStorage.getItem(reviewProgressKey) || '{}'); }
         catch { return {}; }
       }
 
       function setReviewInputsDisabled(disabled) {
-        document.querySelectorAll('#reviewView .answer-field select').forEach(input => { input.disabled = disabled; });
+        document.querySelectorAll('#reviewView .answer-field input').forEach(input => { input.disabled = disabled; });
         document.getElementById('submitReviewAnswers').disabled = disabled;
       }
 
@@ -390,16 +470,11 @@
         document.getElementById('reviewDifficultyFeedback').className = 'feedback good';
         const reviewSolutions = document.getElementById('reviewSolutions');
         reviewSolutions.hidden = false;
-        reviewSolutions.innerHTML = `
-          <h3>Gabarito da revisão</h3>
-          <article class="solution-item"><h4>Exercício 1: C) Coesão</h4><p>Coesão é a atração entre moléculas da mesma substância; na água, as ligações de hidrogênio contribuem para essa atração.</p></article>
-          <article class="solution-item"><h4>Exercício 2: A) Regular a temperatura corporal</h4><p>A evaporação da água exige bastante energia, que é retirada do corpo e ajuda a resfriá-lo.</p></article>
-          <article class="solution-item"><h4>Exercício 3: B) O gelo ocupa mais volume</h4><p>O gelo é menos denso que a água líquida. Para a mesma massa, uma substância menos densa ocupa mais volume.</p></article>
-          <article class="solution-item"><h4>Exercício 4: A) A água líquida tem densidade máxima por volta de 4 °C</h4><p>O gelo, menos denso que a água líquida, fica na superfície e ajuda a isolar a água abaixo.</p></article>
-          <button class="button" type="button" id="newReviewAttempt">Iniciar nova tentativa</button>`;
+        reviewSolutions.innerHTML = '<h3>Gabarito da revisão</h3>' + reviewExercises.map((item, index) => `<article class="solution-item"><h4>Exercício ${index + 1}: ${item.answer}</h4><p>${item.solution}</p></article>`).join('') + '<button class="button" type="button" id="newReviewAttempt">Iniciar nova tentativa</button>';
         document.getElementById('newReviewAttempt').addEventListener('click', () => {
           sessionStorage.removeItem(reviewProgressKey);
           document.getElementById('reviewAnswerForm').reset();
+          clearAnswerMarks('#reviewView');
           document.getElementById('reviewFeedback').textContent = '';
           document.getElementById('reviewFeedback').className = 'feedback';
           document.getElementById('reviewDifficultyFeedback').textContent = '';
@@ -415,10 +490,20 @@
 
       function renderReview() {
         const state = getReviewProgress();
-        document.querySelectorAll('#reviewView .answer-field select').forEach((input, index) => {
+        const container = document.getElementById('reviewExerciseItems');
+        document.getElementById('reviewExerciseCount').textContent = `${reviewExercises.length} exercícios`;
+        container.innerHTML = reviewExercises.map((item, index) => `<div class="exercise-item"><h3>Exercício ${index + 1}</h3><p class="exercise-question">${item.question}</p><div class="answer-field"><label for="review-answer-${index}">Resultado</label><input id="review-answer-${index}" name="review-answer-${index}" type="text" inputmode="decimal" autocomplete="off" placeholder="Sua resposta" ${state.phase === 'submitted' ? 'disabled' : ''}></div><div class="answer-result" aria-live="polite"></div></div>`).join('');
+        reviewExercises.forEach((_, index) => {
+          const input = document.getElementById(`review-answer-${index}`);
           input.value = state.answers?.[index] ?? '';
+          input.addEventListener('input', () => {
+            const draft = getReviewProgress();
+            draft.answers = reviewExercises.map((__, answerIndex) => document.getElementById(`review-answer-${answerIndex}`).value);
+            sessionStorage.setItem(reviewProgressKey, JSON.stringify(draft));
+          });
         });
         renderDifficultyScale(state.difficulty, 'reviewDifficultyScale', 'reviewDifficulty', 'review-difficulty');
+        if (state.phase === 'difficulty' || state.phase === 'submitted') markReviewAnswers(state.answers || []);
         if (state.phase === 'difficulty') showReviewDifficulty();
         if (state.phase === 'submitted') showReviewSolutions(state);
       }
@@ -433,15 +518,7 @@
         });
       }
 
-      function showSection(name) {
-        if (name === 'today') {
-          document.getElementById('todayPanel').hidden = false;
-          outerTabs.forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.section === name)));
-        }
-      }
-
       lessonTabs.forEach(tab => tab.addEventListener('click', () => showLesson(tab.dataset.lesson)));
-      outerTabs.forEach(tab => tab.addEventListener('click', () => showSection(tab.dataset.section)));
       document.querySelectorAll('[data-go]').forEach(button => button.addEventListener('click', () => showLesson(button.dataset.go)));
       document.getElementById('answerForm').addEventListener('submit', event => {
         event.preventDefault();
@@ -454,6 +531,7 @@
         }
         const nextState = { phase: 'difficulty', answers };
         sessionStorage.setItem(progressKey, JSON.stringify(nextState));
+        markExerciseAnswers(answers);
         feedback.textContent = 'Respostas recebidas. Agora avalie a dificuldade para ver as soluções.';
         feedback.className = 'feedback good';
         showDifficulty();
@@ -477,20 +555,21 @@
       document.getElementById('reviewAnswerForm').addEventListener('submit', event => {
         event.preventDefault();
         const feedback = document.getElementById('reviewFeedback');
-        const answers = [...document.querySelectorAll('#reviewView .answer-field select')].map(input => input.value.trim());
+        const answers = [...document.querySelectorAll('#reviewView .answer-field input')].map(input => input.value.trim());
         if (answers.some(answer => !answer)) {
           feedback.textContent = 'Preencha todos os exercícios antes de enviar.';
           feedback.className = 'feedback try-again';
           return;
         }
         sessionStorage.setItem(reviewProgressKey, JSON.stringify({ phase: 'difficulty', answers }));
+        markReviewAnswers(answers);
         feedback.textContent = 'Respostas recebidas. Agora avalie a dificuldade para ver as soluções.';
         feedback.className = 'feedback good';
         showReviewDifficulty();
         document.getElementById('reviewDifficultyBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
       document.getElementById('reviewDifficultyForm').addEventListener('submit', event => {
-        event.preventEvent();
+        event.preventDefault();
         const selected = document.querySelector('input[name="reviewDifficulty"]:checked');
         const feedback = document.getElementById('reviewDifficultyFeedback');
         if (!selected) {
@@ -502,6 +581,12 @@
         sessionStorage.setItem(reviewProgressKey, JSON.stringify(completeState));
         showReviewSolutions(completeState);
       });
+      document.querySelectorAll('.hint-toggle').forEach(button => button.addEventListener('click', () => {
+        const hint = button.nextElementSibling;
+        const visible = hint.classList.toggle('visible');
+        button.setAttribute('aria-expanded', String(visible));
+        button.textContent = visible ? 'Ocultar dica' : 'Mostrar dica';
+      }));
       renderExercises();
       renderReview();
     })();
